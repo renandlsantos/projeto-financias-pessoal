@@ -1,6 +1,7 @@
 # PRD - Sistema de Controle Financeiro Pessoal
 ## FinanceFlow v2.0
 
+
 ### 1. VISÃO EXECUTIVA
 
 #### 1.1 Problema
@@ -19,11 +20,12 @@ FinanceFlow é uma plataforma web completa de gestão financeira pessoal que ofe
 - Interface intuitiva e responsiva
 
 #### 1.3 Objetivos de Negócio
-- **Curto prazo (3 meses)**: 10.000 usuários ativos
-- **Médio prazo (6 meses)**: 50.000 usuários, modelo freemium
-- **Longo prazo (12 meses)**: 200.000 usuários, break-even
+- Atingir 10.000 usuários ativos
+- Atingir 50.000 usuários e implementar modelo freemium
+- Atingir 200.000 usuários e break-even
 
 ---
+
 
 ### 2. ANÁLISE DE MERCADO
 
@@ -420,9 +422,10 @@ CREATE INDEX idx_goals_user_active ON goals(user_id, is_achieved);
 
 ---
 
+
 ### 7. ROADMAP DE DESENVOLVIMENTO
 
-#### 7.1 MVP - Sprint 0 (2 semanas)
+#### 7.1 MVP
 **Objetivo**: Sistema funcional básico
 
 **Entregáveis**:
@@ -438,7 +441,7 @@ CREATE INDEX idx_goals_user_active ON goals(user_id, is_achieved);
 - 0 bugs críticos
 - Deploy funcional
 
-#### 7.2 Fase 1 - Features Core (1 mês)
+#### 7.2 Fase 1 - Features Core
 **Objetivo**: Funcionalidades essenciais
 
 **Entregáveis**:
@@ -452,7 +455,7 @@ CREATE INDEX idx_goals_user_active ON goals(user_id, is_achieved);
 - 100 usuários beta
 - NPS > 7
 
-#### 7.3 Fase 2 - Enhancements (2 meses)
+#### 7.3 Fase 2 - Enhancements
 **Objetivo**: Melhorias e otimizações
 
 **Entregáveis**:
@@ -466,7 +469,7 @@ CREATE INDEX idx_goals_user_active ON goals(user_id, is_achieved);
 - 1.000 usuários
 - Retenção > 60%
 
-#### 7.4 Fase 3 - Scale (3 meses)
+#### 7.4 Fase 3 - Scale
 **Objetivo**: Crescimento e monetização
 
 **Entregáveis**:
@@ -483,6 +486,7 @@ CREATE INDEX idx_goals_user_active ON goals(user_id, is_achieved);
 
 ---
 
+
 ### 8. MODELO DE NEGÓCIO
 
 #### 8.1 Monetização
@@ -496,6 +500,7 @@ CREATE INDEX idx_goals_user_active ON goals(user_id, is_achieved);
 - Consultoria financeira (parceiros)
 - Cashback em compras
 - Dados agregados (anonimizados)
+
 
 #### 8.2 Métricas-Chave (KPIs)
 
@@ -529,6 +534,7 @@ CREATE INDEX idx_goals_user_active ON goals(user_id, is_achieved);
 | Regulação | Baixa | Alto | Compliance LGPD, advogados |
 
 ---
+
 
 ### 10. CRITÉRIOS DE SUCESSO
 
@@ -573,11 +579,3 @@ CREATE INDEX idx_goals_user_active ON goals(user_id, is_achieved);
 #### C. Changelog
 - v2.0 - Documento completo inicial
 - v1.0 - Draft inicial
-
----
-
-**Documento aprovado por:**
-- Product Owner: _________________
-- Tech Lead: _________________
-- UX Lead: _________________
-- Data: ___/___/2025
