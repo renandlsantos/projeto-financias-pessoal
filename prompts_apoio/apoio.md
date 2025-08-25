@@ -86,4 +86,52 @@ Personal finance management system with Python FastAPI backend and React TypeScr
 
 ---
 
-5. 
+5. crie pra mim pasta chamada backend e com ela crie o arquivo requirements.txt com todas as libs que precisamos para desenvolver e depois crie um venv local e instale essas libs 
+
+---
+
+6. @workspace dentro o back end
+
+# Criar arquivos base
+touch app/__init__.py
+touch app/main.py
+mkdir app/api app/core app/models app/schemas app/services
+
+---
+
+7. analisar a nossa pasta docs e com isso monte pra gente a estrutura base do FastAPi para nosso projeto seguindo um padrao de estrutra para o FinanceFlow baseado no nosso #file:prd.md 
+
+
+app/
+├── __init__.py
+├── main.py (FastAPI app with CORS, middleware, routers)
+├── core/
+│   ├── __init__.py
+│   ├── config.py (settings with Pydantic BaseSettings)
+│   ├── database.py (SQLAlchemy async setup)
+│   ├── security.py (JWT, password hashing)
+│   └── deps.py (dependencies for DI)
+├── api/
+│   ├── __init__.py
+│   └── v1/
+│       ├── __init__.py
+│       ├── auth.py
+│       ├── users.py
+│       ├── accounts.py
+│       └── transactions.py
+├── models/
+│   ├── __init__.py
+│   ├── user.py
+│   ├── account.py
+│   └── transaction.py
+├── schemas/
+│   ├── __init__.py
+│   ├── user.py
+│   ├── account.py
+│   └── transaction.py
+└── services/
+    ├── __init__.py
+    ├── auth_service.py
+    └── transaction_service.py
+
+Gere todos os arquivos com os padrões FastAPI adequados, suporte assíncrono e lógica de domínio do FinanceFlow.
