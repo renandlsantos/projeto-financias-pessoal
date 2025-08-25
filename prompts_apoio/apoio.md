@@ -159,3 +159,11 @@ Gere todos os arquivos com os padrões FastAPI adequados, suporte assíncrono e 
 Seguir os requisitos do PRD para gerenciamento e segurança de usuários.
 
 #file:docs #file:prd.md 
+
+---
+
+11. build o contianer pra mim e realizar o processo de teste já com migration do nosso projeto e validar se o back estao 100% funcional de acordo com o #file:docs 
+
+---
+
+12. Agora suba para mim essas mudanças que a gente fez dentro dessa branch, então eu faço todo o commit com a documentação que a gente fez dentro da estrutura do nosso back-end, e a partir disso, crie uma próxima branch com nome 02.create-front-end

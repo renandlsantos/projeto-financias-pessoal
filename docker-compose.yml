@@ -3,21 +3,21 @@ version: '3.8'
 services:
   # PostgreSQL Database
   postgres:
-    image: postgres:15-alpine
+    image: postgres:15
     container_name: financeflow_postgres
+    restart: unless-stopped
     environment:
-      POSTGRES_DB: financeflow
+      POSTGRES_DB: financeflow_db
       POSTGRES_USER: financeflow
       POSTGRES_PASSWORD: financeflow123
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U financeflow"]
-      interval: 30s
-      timeout: 10s
+      test: ["CMD-SHELL", "pg_isready -U financeflow -d financeflow_db"]
+      interval: 10s
+      timeout: 5s
       retries: 5
 
   # Redis Cache
@@ -25,7 +25,7 @@ services:
     image: redis:7-alpine
     container_name: financeflow_redis
     ports:
-      - "6379:6379"
+      - "6380:6379"
     volumes:
       - redis_data:/data
     healthcheck:
@@ -39,7 +39,7 @@ services:
     build: ./backend
     container_name: financeflow_backend
     ports:
-      - "8000:8000"
+      - "8888:8000"
     depends_on:
       postgres:
         condition: service_healthy

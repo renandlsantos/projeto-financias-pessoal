@@ -1,4 +1,5 @@
-from pydantic import BaseSettings, validator
+from pydantic_settings import BaseSettings
+from pydantic import validator
 from functools import lru_cache
 from typing import Optional
 import secrets
@@ -24,7 +25,8 @@ class Settings(BaseSettings):
     POSTGRES_USER: str
     POSTGRES_PASSWORD: str
     POSTGRES_DB: str
-    DATABASE_URL: Optional[str] = None
+    # Database
+    DATABASE_URL: str = "postgresql+asyncpg://financeflow:financeflow123@postgres:5432/financeflow"
     
     # Cache
     REDIS_URL: str

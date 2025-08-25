@@ -141,7 +141,9 @@ class AuthService:
             )
         
         # Verifica se não expirou
-        if db_refresh_token.expires_at < datetime.utcnow():
+        from datetime import timezone
+        current_utc = datetime.now(timezone.utc)
+        if db_refresh_token.expires_at < current_utc:
             # Revoga token expirado
             db_refresh_token.is_revoked = True
             await db.commit()
