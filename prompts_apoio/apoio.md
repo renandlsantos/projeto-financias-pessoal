@@ -167,3 +167,12 @@ Seguir os requisitos do PRD para gerenciamento e segurança de usuários.
 ---
 
 12. Agora suba para mim essas mudanças que a gente fez dentro dessa branch, então eu faço todo o commit com a documentação que a gente fez dentro da estrutura do nosso back-end, e a partir disso, crie uma próxima branch com nome 02.create-front-end
+
+---
+
+13. Preciso que você pegue o nosso arquivo de documentação do Frontend setup e você documente ele com mais instruções para a gente fazer o desenvolvimento das nossas telas, e você deixe ele com mais detalhes e mais completo de acordo com o nosso arquivo de PRD. Então pegue ele como contexto e melhore ele para você trazer todas as informações que você precisa para fazer um front-end. É totalmente assertivo com a documentação que a gente precisa baseado na estrutura do Backend que já tem pronto, a gente já tem o serviço já pronto do Backend funcionando local, então pegue isso aí como insumo também para sinalizar a estrutura do nosso Frontend para a gente já ter isso pronto, e a partir disso melhore essa documentação aí para a gente. #file:prd.md 
+
+
+---
+
+14. Vamos começar então agora o desenvolvimento do nosso frontend, com as especificações que estão dentro do nosso documento de setup. Então siga esse documento passo a passo para a gente, que a partir disso você suba isso pelo nosso frontend. Na sequência que a gente tiver todo o frontend já organizado e estruturado, a gente faz um teste com as nossas APIs do back, que já estão configuradas no ar. Lembre-se de manter o nosso padrão de S.O.L.I.D e D.R.Y. de arquitetura de software, das configurações que a gente tem, também padrões de arquitetura de software.
