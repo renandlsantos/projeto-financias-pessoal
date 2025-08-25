@@ -135,3 +135,27 @@ app/
     └── transaction_service.py
 
 Gere todos os arquivos com os padrões FastAPI adequados, suporte assíncrono e lógica de domínio do FinanceFlow.
+
+---- 
+
+8. gerar um gitignore ignore o venv para nao subir nenhum codigo nao seja ensensial e na sequencia suba pra mim todas mudanca que foram realizadas e crie um branc para tarefa de model-user-auth
+
+---
+
+9. seguia gerando uma nova branch como 01.model-user-auth
+
+---
+
+10. Implementar um sistema completo de autenticação de usuários para o FinanceFlow:
+
+0. Crie pra mim o docker file do backend e docker compose ja com o banco de dados vamos utilizar no projeto
+1. Modelo SQLAlchemy de usuário com campos de autenticação
+2. Esquemas Pydantic para operações de usuário
+3. Serviço de autenticação JWT com tokens de atualização
+4. Pontos de extremidade de autenticação FastAPI (registro, login, atualização, me)
+5. Hash de senha com bcrypt
+6. Validação abrangente e tratamento de erros
+
+Seguir os requisitos do PRD para gerenciamento e segurança de usuários.
+
+#file:docs #file:prd.md 
