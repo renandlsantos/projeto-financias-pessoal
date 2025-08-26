@@ -7,9 +7,12 @@ from sqlalchemy import select, and_, or_, func
 from fastapi import HTTPException, status
 
 from ..models.category import Category, TransactionTypeEnum
+from ..models.transaction import Transaction 
 from ..models.user import User
-from ..schemas.category import CategoryCreate, CategoryUpdate, CategoryRead, CategoryWithSubcategories
-from ..core.database import get_session
+from ..schemas.category import (
+    CategoryCreate, CategoryUpdate, CategoryRead, CategoryWithSubcategories, TransactionType
+)
+from ..core.database import SessionLocal
 
 
 class CategoryService:
@@ -388,5 +391,5 @@ class CategoryService:
 # Função helper para obter instância do serviço
 async def get_category_service() -> CategoryService:
     """Dependency injection para CategoryService."""
-    async with get_session() as session:
+    async with SessionLocal() as session:
         return CategoryService(session)

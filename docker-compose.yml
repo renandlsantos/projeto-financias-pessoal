@@ -50,11 +50,30 @@ services:
       - POSTGRES_SERVER=postgres
       - POSTGRES_USER=financeflow
       - POSTGRES_PASSWORD=financeflow123
-      - POSTGRES_DB=financeflow
+      - POSTGRES_DB=financeflow_db
       - REDIS_URL=redis://redis:6379
     volumes:
       - ./backend:/app
     restart: unless-stopped
+
+  # React Frontend
+  frontend:
+    build: ./frontend
+    container_name: financeflow_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://localhost:8888/api
+      - VITE_APP_NAME=FinanceFlow
+      - NODE_ENV=development
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
 
 volumes:
   postgres_data:

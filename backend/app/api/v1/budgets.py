@@ -3,7 +3,8 @@ from uuid import UUID
 from fastapi import APIRouter, Depends, HTTPException, status, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from ...core.deps import get_current_user, get_session
+from ...core.deps import get_current_user
+from ...core.database import get_db
 from ...models.user import User
 from ...schemas.budget import BudgetCreate, BudgetUpdate, BudgetRead, BudgetSummary
 from ...services.budget_service import BudgetService
@@ -15,7 +16,7 @@ router = APIRouter(prefix="/budgets", tags=["budgets"])
 async def create_budget(
     budget_data: BudgetCreate,
     current_user: User = Depends(get_current_user),
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db)
 ):
     """
     Cria um novo orçamento para o usuário.
@@ -38,7 +39,7 @@ async def list_user_budgets(
     limit: int = Query(100, ge=1, le=100, description="Limite de resultados"),
     offset: int = Query(0, ge=0, description="Offset para paginação"),
     current_user: User = Depends(get_current_user),
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db)
 ):
     """
     Lista orçamentos do usuário com filtros opcionais.
@@ -61,7 +62,7 @@ async def list_user_budgets(
 @router.get("/active/summary", response_model=List[BudgetSummary])
 async def get_active_budgets_summary(
     current_user: User = Depends(get_current_user),
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db)
 ):
     """
     Retorna resumo de todos os orçamentos ativos do usuário.
@@ -80,7 +81,7 @@ async def get_active_budgets_summary(
 async def get_budget(
     budget_id: UUID,
     current_user: User = Depends(get_current_user),
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db)
 ):
     """
     Busca orçamento específico do usuário.
@@ -95,7 +96,7 @@ async def get_budget(
 async def get_budget_summary(
     budget_id: UUID,
     current_user: User = Depends(get_current_user),
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db)
 ):
     """
     Retorna resumo detalhado de um orçamento específico.
@@ -114,7 +115,7 @@ async def update_budget(
     budget_id: UUID,
     budget_update: BudgetUpdate,
     current_user: User = Depends(get_current_user),
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db)
 ):
     """
     Atualiza orçamento existente.
@@ -133,7 +134,7 @@ async def update_budget(
 async def delete_budget(
     budget_id: UUID,
     current_user: User = Depends(get_current_user),
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db)
 ):
     """
     Remove orçamento do usuário.

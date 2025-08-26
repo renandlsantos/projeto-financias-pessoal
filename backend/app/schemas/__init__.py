@@ -19,14 +19,13 @@ from .category import (
 from .user import (
     UserCreate,
     UserUpdate,
-    UserRead
+    UserOut
 )
 
 # Transaction schemas
 from .transaction import (
     TransactionCreate,
-    TransactionUpdate,
-    TransactionRead
+    TransactionOut
 )
 
 __all__ = [
@@ -46,10 +45,9 @@ __all__ = [
     # User
     "UserCreate",
     "UserUpdate",
-    "UserRead",
+    "UserOut",
     
     # Transaction
     "TransactionCreate",
-    "TransactionUpdate", 
-    "TransactionRead"
+    "TransactionOut"
 ]

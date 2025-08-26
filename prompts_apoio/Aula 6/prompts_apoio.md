@@ -15,3 +15,10 @@
 6. #file:copilot-instructions.md Atualize nosso arquivo baseado nas melhorias que fizemos, então analise toda a nossa pasta docs, da nossa pasta plans e agents, e faça toda a atualização do contexto do nosso arquivo de instrução.
 ---
 7. A partir de agora eu preciso que você seja totalmente autônomo, então pegue todos os planos que a gente tem disponível e tome as ações de fazer todos os desenvolvimentos que dá a sua aplicação. Com isso eu preciso que você monte um to-do de cada tarefa que você vai executar para você tanto documentar essa tarefa que você está iniciando, e a partir do momento que você documentar, assim que você finalizar, você dá um check para ver se a tarefa foi concluída, e siga os planos e também use como referência toda a parte docs da nossa documentação, a nossa pasta docs, e os agents para você usar os prompts especialistas em cada feature e frente que você vai acabar atuando.
+---
+8. atualizar o ate onde você executou 
+---
+9. atualize pra mim a branch com as mudancas que foi realizada e suba nosso ambiente local para validamos nosso projeto
+---
+10. dentro do nosso #file:docker-compose.yml nosso front end preciso ajuste para subimos nosso front tambem via container
+---

@@ -23,7 +23,12 @@
     "chmod": true,
     "chown": true,
     "/^Remove-Item\\b/i": true,
-    "/^Stop-Process\\b/i": true
+    "/^Stop-Process\\b/i": true,
+    // Permite: git, docker, docker compose
+    "/^git\\b/i": true,
+    "/^docker\\b/i": true,
+    "/^docker-compose\\b/i": true,
+    "/^docker\\s+compose\\b/i": true,
   },
 
   // Não me notifique pedindo confirmação

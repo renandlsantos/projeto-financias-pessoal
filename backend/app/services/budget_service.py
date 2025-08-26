@@ -12,7 +12,7 @@ from ..models.category import Category
 from ..models.transaction import Transaction
 from ..models.user import User
 from ..schemas.budget import BudgetCreate, BudgetUpdate, BudgetRead, BudgetSummary
-from ..core.database import get_session
+from ..core.database import SessionLocal
 
 
 class BudgetService:
@@ -339,5 +339,5 @@ class BudgetService:
 # Função helper para obter instância do serviço
 async def get_budget_service() -> BudgetService:
     """Dependency injection para BudgetService."""
-    async with get_session() as session:
+    async with SessionLocal() as session:
         return BudgetService(session)

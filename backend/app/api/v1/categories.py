@@ -3,7 +3,8 @@ from uuid import UUID
 from fastapi import APIRouter, Depends, HTTPException, status, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from ...core.deps import get_current_user, get_session
+from ...core.deps import get_current_user
+from ...core.database import get_db
 from ...models.user import User
 from ...models.category import TransactionTypeEnum
 from ...schemas.category import (
@@ -22,7 +23,7 @@ router = APIRouter(prefix="/categories", tags=["categories"])
 async def create_category(
     category_data: CategoryCreate,
     current_user: User = Depends(get_current_user),
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db)
 ):
     """
     Cria uma nova categoria para o usuário.
@@ -45,7 +46,7 @@ async def list_user_categories(
     include_system: bool = Query(True, description="Incluir categorias do sistema"),
     include_subcategories: bool = Query(False, description="Incluir subcategorias na listagem"),
     current_user: User = Depends(get_current_user),
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db)
 ):
     """
     Lista categorias do usuário com filtros opcionais.
@@ -76,7 +77,7 @@ async def list_categories_with_subcategories(
     type_filter: Optional[TransactionType] = Query(None, description="Filtrar por tipo de transação"),
     include_system: bool = Query(True, description="Incluir categorias do sistema"),
     current_user: User = Depends(get_current_user),
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db)
 ):
     """
     Lista categorias principais com suas subcategorias aninhadas.
@@ -104,7 +105,7 @@ async def list_categories_with_subcategories(
 @router.get("/system", response_model=List[CategoryRead])
 async def list_system_categories(
     type_filter: Optional[TransactionType] = Query(None, description="Filtrar por tipo de transação"),
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db)
 ):
     """
     Lista categorias padrão do sistema.
@@ -127,7 +128,7 @@ async def list_system_categories(
 async def get_category(
     category_id: UUID,
     current_user: User = Depends(get_current_user),
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db)
 ):
     """
     Busca categoria específica por ID.
@@ -145,7 +146,7 @@ async def update_category(
     category_id: UUID,
     category_update: CategoryUpdate,
     current_user: User = Depends(get_current_user),
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db)
 ):
     """
     Atualiza categoria existente do usuário.
@@ -164,7 +165,7 @@ async def update_category(
 async def delete_category(
     category_id: UUID,
     current_user: User = Depends(get_current_user),
-    session: AsyncSession = Depends(get_session)
+    session: AsyncSession = Depends(get_db)
 ):
     """
     Remove categoria do usuário (soft delete).
