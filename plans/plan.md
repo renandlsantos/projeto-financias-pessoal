@@ -30,14 +30,14 @@ Este plano é um documento vivo e deve ser atualizado pelo **Product Owner** e p
 
 | Tarefa | Agente Responsável | Status |
 | :--- | :--- | :--- |
-| 1.1. Definir User Stories e Critérios de Aceite para Orçamentos. | 👑 **Product Owner** | `A Fazer` |
-| 1.2. Projetar o fluxo de criação, visualização e edição de orçamentos. | ✨ **UX Designer** | `A Fazer` |
-| 1.3. Planejar a arquitetura da feature (modelos, serviços, endpoints). | 🛠️ **Tech Lead** | `A Fazer` |
-| 1.4. Modelar tabelas `budgets` e `budget_items` e criar migração. | 🗄️ **DBA** | `A Fazer` |
-| 1.5. Desenvolver endpoints CRUD para `/budgets`. | 🚀 **Backend Dev** | `A Fazer` |
-| 1.6. Desenvolver a página de Orçamentos no frontend com formulários e gráficos. | 🎨 **Frontend Dev** | `A Fazer` |
-| 1.7. Criar testes de integração para a API de Orçamentos. | 🏗️ **Infra & QA** | `A Fazer` |
-| 1.8. Validar a feature implementada contra os critérios de aceite. | 👑 **Product Owner** | `A Fazer` |
+| 1.1. Definir User Stories e Critérios de Aceite para Orçamentos. | 👑 **Product Owner** | ✅ `Concluído` |
+| 1.2. Projetar o fluxo de criação, visualização e edição de orçamentos. | ✨ **UX Designer** | ✅ `Concluído` |
+| 1.3. Planejar a arquitetura da feature (modelos, serviços, endpoints). | 🛠️ **Tech Lead** | ✅ `Concluído` |
+| 1.4. Modelar tabelas `budgets` e `budget_items` e criar migração. | 🗄️ **DBA** | ✅ `Concluído` |
+| 1.5. Desenvolver endpoints CRUD para `/budgets`. | 🚀 **Backend Dev** | ✅ `Concluído` |
+| 1.6. Desenvolver a página de Orçamentos no frontend com formulários e gráficos. | 🎨 **Frontend Dev** | ✅ `Concluído` |
+| 1.7. Criar testes de integração para a API de Orçamentos. | 🏗️ **Infra & QA** | ✅ `Concluído` |
+| 1.8. Validar a feature implementada contra os critérios de aceite. | 👑 **Product Owner** | 🚧 `Em Progresso` |
 
 ### 💰 Feature 2: Metas Financeiras (Goals)
 

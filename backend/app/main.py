@@ -6,6 +6,8 @@ from sqlalchemy.exc import IntegrityError
 import time
 
 from app.api.v1 import auth, users, accounts, transactions
+from app.api.v1.budgets import router as budgets_router
+from app.api.v1.categories import router as categories_router
 from app.core.config import get_settings
 
 settings = get_settings()
@@ -64,6 +66,8 @@ app.include_router(auth.router, prefix=f"{settings.API_V1_STR}/auth", tags=["aut
 app.include_router(users.router, prefix=f"{settings.API_V1_STR}/users", tags=["users"])
 app.include_router(accounts.router, prefix=f"{settings.API_V1_STR}/accounts", tags=["accounts"])
 app.include_router(transactions.router, prefix=f"{settings.API_V1_STR}/transactions", tags=["transactions"])
+app.include_router(budgets_router, prefix=f"{settings.API_V1_STR}")
+app.include_router(categories_router, prefix=f"{settings.API_V1_STR}")
 
 # Root endpoint
 @app.get("/")
