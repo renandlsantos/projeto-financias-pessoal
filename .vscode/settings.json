@@ -1,15 +1,47 @@
 {
-    "chat.tools.terminal.autoApprove": {
-        "rm": false,
-        "rmdir": false,
-        "del": false,
-        "kill": false,
-        "curl": false,
-        "wget": false,
-        "eval": false,
-        "chmod": false,
-        "chown": false,
-        "/^Remove-Item\\b/i": false
-    },
-    "chat.commandCenter.enabled": true
+  // Deixa o Agente ligado e com fôlego
+  "chat.agent.enabled": true,
+  "chat.agent.maxRequests": 50,
+
+  // Agente conserta sozinho e pode rodar tasks do workspace
+  "github.copilot.chat.agent.autoFix": true,
+  "github.copilot.chat.agent.runTasks": true,
+
+  // 🚨 Bypass geral de confirmações de ferramentas (NÍVEL MÁXIMO)
+  "chat.tools.autoApprove": true,
+
+  // Se quiser granularidade (mas aqui já está tudo liberado acima):
+  // marque como true para não pedir confirmação nem para comandos perigosos
+  "chat.tools.terminal.autoApprove": {
+    "rm": true,
+    "rmdir": true,
+    "del": true,
+    "kill": true,
+    "curl": true,
+    "wget": true,
+    "eval": true,
+    "chmod": true,
+    "chown": true,
+    "/^Remove-Item\\b/i": true,
+    "/^Stop-Process\\b/i": true
+  },
+
+  // Não me notifique pedindo confirmação
+  "chat.notifyWindowOnConfirmation": false,
+
+  // Edição via chat: sem popups e com auto-aceite rápido
+  "chat.editing.confirmEditRequestRemoval": false,
+  "chat.editing.confirmEditRequestRetry": false,
+  "chat.editing.autoAcceptDelay": 600, // ms; ajuste p/ 0.3–1.0s conforme gosto
+
+  // O resto que ajuda o agente a agir “sozinho”
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.newWorkspaceCreation.enabled": true,
+
+  // Suas atuais (mantidas)
+  "chat.commandCenter.enabled": true,
+  "github.copilot.enable": true,
+  "github.copilot.inlineSuggest.enable": true,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.suggestionCount": 1
 }
