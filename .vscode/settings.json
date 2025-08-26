@@ -1,7 +1,7 @@
 {
   // Deixa o Agente ligado e com fôlego
   "chat.agent.enabled": true,
-  "chat.agent.maxRequests": 50,
+  "chat.agent.maxRequests": 100,
 
   // Agente conserta sozinho e pode rodar tasks do workspace
   "github.copilot.chat.agent.autoFix": true,
