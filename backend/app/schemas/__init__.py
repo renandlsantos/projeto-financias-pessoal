@@ -28,6 +28,21 @@ from .transaction import (
     TransactionOut
 )
 
+# Goal schemas
+from .goal import (
+    GoalCreate,
+    GoalUpdate,
+    GoalResponse,
+    GoalWithDetails,
+    GoalSummary,
+    ContributionCreate,
+    ContributionResponse,
+    MilestoneCreate,
+    MilestoneResponse,
+    GoalStatus,
+    ContributionType
+)
+
 __all__ = [
     # Budget
     "BudgetCreate",
@@ -49,5 +64,18 @@ __all__ = [
     
     # Transaction
     "TransactionCreate",
-    "TransactionOut"
+    "TransactionOut",
+    
+    # Goal
+    "GoalCreate",
+    "GoalUpdate",
+    "GoalResponse",
+    "GoalWithDetails",
+    "GoalSummary",
+    "ContributionCreate",
+    "ContributionResponse",
+    "MilestoneCreate",
+    "MilestoneResponse",
+    "GoalStatus",
+    "ContributionType"
 ]

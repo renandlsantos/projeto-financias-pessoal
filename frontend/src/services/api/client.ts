@@ -10,6 +10,9 @@ export const apiClient = axios.create({
   },
 });
 
+// Export client as alias for backward compatibility
+export const client = apiClient;
+
 // Interceptor para adicionar token
 apiClient.interceptors.request.use((config) => {
   const token = localStorage.getItem('financeflow_token');

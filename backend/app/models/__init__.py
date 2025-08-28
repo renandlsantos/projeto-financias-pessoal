@@ -4,6 +4,7 @@ from .transaction import Transaction
 from .refresh_token import RefreshToken
 from .category import Category, TransactionTypeEnum
 from .budget import Budget
+from .goal import Goal, GoalContribution, GoalMilestone
 
 __all__ = [
     "User",
@@ -12,5 +13,8 @@ __all__ = [
     "RefreshToken",
     "Category",
     "TransactionTypeEnum",
-    "Budget"
+    "Budget",
+    "Goal",
+    "GoalContribution",
+    "GoalMilestone"
 ]

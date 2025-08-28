@@ -1,11 +1,11 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import BudgetCard from '../../src/components/ui/BudgetCard';
-import { BudgetSummary, BudgetStatus } from '../../src/types/budgets';
+import BudgetCard from '../../components/ui/BudgetCard';
+import { BudgetSummary, BudgetStatus } from '../../types/budgets';
 
 // Mock do BudgetService
-vi.mock('../../src/services/budgetService', () => ({
+vi.mock('../../services/budgetService', () => ({
   BudgetService: {
     formatCurrency: vi.fn((amount: number) => `R$ ${amount.toFixed(2).replace('.', ',')}`),
     isBudgetNearLimit: vi.fn(() => false),

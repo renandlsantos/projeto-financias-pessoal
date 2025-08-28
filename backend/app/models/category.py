@@ -41,6 +41,7 @@ class Category(Base):
     parent = relationship("Category", back_populates="subcategories", remote_side=[id])
     subcategories = relationship("Category", back_populates="parent", cascade="all, delete-orphan")
     budgets = relationship("Budget", back_populates="category", cascade="all, delete-orphan")
+    goals = relationship("Goal", back_populates="category", cascade="all, delete-orphan")
     transactions = relationship("Transaction", back_populates="category")
     
     def __repr__(self):

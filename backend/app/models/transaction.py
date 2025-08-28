@@ -27,3 +27,4 @@ class Transaction(Base):
     
     # Relacionamentos
     category = relationship("Category", back_populates="transactions")
+    goal_contribution = relationship("GoalContribution", back_populates="transaction", uselist=False)

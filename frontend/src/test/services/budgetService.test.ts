@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
-import { BudgetService } from '../../src/services/budgetService';
-import { Budget, CreateBudgetData, BudgetSummary, BudgetStatus } from '../../src/types/budgets';
+import { BudgetService } from '../../services/budgetService';
+import { Budget, CreateBudgetData, BudgetSummary, BudgetStatus } from '../../types/budgets';
 
 // Mock do axios
 vi.mock('axios');
