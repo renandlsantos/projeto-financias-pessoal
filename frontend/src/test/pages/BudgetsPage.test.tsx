@@ -4,10 +4,10 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { configureStore } from '@reduxjs/toolkit';
-import BudgetsPage from '../../src/pages/BudgetsPage';
+import BudgetsPage from '../../pages/BudgetsDashboard';
 
 // Mock dos serviços
-vi.mock('../../src/services/budgetService', () => ({
+vi.mock('../../services/budgetService', () => ({
   BudgetService: {
     getBudgets: vi.fn(),
     createBudget: vi.fn(),
@@ -17,7 +17,7 @@ vi.mock('../../src/services/budgetService', () => ({
   }
 }));
 
-vi.mock('../../src/services/categoryService', () => ({
+vi.mock('../../services/categoryService', () => ({
   CategoryService: {
     getCategories: vi.fn()
   }

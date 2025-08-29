@@ -1,11 +1,11 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CategoryCard from '../../src/components/ui/CategoryCard';
-import { Category } from '../../src/types/categories';
+import CategoryCard from '../../components/ui/CategoryCard';
+import { Category } from '../../types';
 
 // Mock do CategoryService
-vi.mock('../../src/services/categoryService', () => ({
+vi.mock('../../services/categoryService', () => ({
   CategoryService: {
     formatCurrency: vi.fn((amount: number) => `R$ ${amount.toFixed(2).replace('.', ',')}`),
     getIconByCategory: vi.fn(() => 'restaurant'),
